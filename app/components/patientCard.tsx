@@ -1,6 +1,5 @@
 import { Button, Card, Text } from "tamagui";
 import RNBeep from 'react-native-a-beep';
-import { useEffect } from "react";
 
 export const PatientCard = ({ data, pname }) => {
   // useEffect(() => {
@@ -11,9 +10,13 @@ export const PatientCard = ({ data, pname }) => {
     <Button asChild onPress={ () => {RNBeep.beep()}}>
       <Card size="$5" alignItems="center" justifyContent="center" p="$4">
         <Card.Header>
-          <Text fontSize={30}>{pname}</Text>
+          <Text fontSize={30} color="orange" m="2">{pname}</Text>
         </Card.Header>
-        <Text>{alert}</Text>
+        <Text color={data?.alert ? "red" : "lightgreen"}>{alert}</Text>
+        <Text>breath rate : {data?.breathRate}</Text>
+        <Text>heart rate : {data?.["heart-rate"]}</Text>
+        <Text>temperature : {data?.temperature}</Text>
+          <Text>spO2 : {data?.spo2}</Text>
       </Card>
     </Button>
   );

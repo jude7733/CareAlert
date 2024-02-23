@@ -7744,6 +7744,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-helmet-async: "npm:~2.0.4"
     react-native: "npm:0.73.4"
+    react-native-a-beep: "npm:^1.2.0"
     react-native-reanimated: "npm:~3.6.2"
     react-native-safe-area-context: "npm:4.8.2"
     react-native-screens: "npm:~3.29.0"
@@ -11436,6 +11437,15 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 73b36281e58eeb27c9cc6031301b6ae19ecdc9f18ae2d518bdb39b0ac564e65c5779405d623f1df9abf378a13858b79442480244bd579968afc1faf9a2ce5e05
+  languageName: node
+  linkType: hard
+
+"react-native-a-beep@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "react-native-a-beep@npm:1.2.0"
+  peerDependencies:
+    react-native: ^0.64.1
+  checksum: 7d658bbf2c722c637249f965ae83c0f8260ed628cfbf79733a5d2ad7123b28f756258e089bb12f10b032969bc1b7c4f4ecd2a58876fc04bada66b62c5c1b3c36
   languageName: node
   linkType: hard
 

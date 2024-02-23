@@ -1,14 +1,13 @@
 import { Button, Card, Text } from "tamagui";
-import RNBeep from 'react-native-a-beep';
+import { writeUserData } from "../firebase/config";
 
 export const PatientCard = ({ data, pname }) => {
-  // useEffect(() => {
-  //   RNBeep.beep();
-  // }),[data?.alert]
   const alert = data?.alert == true ? "Need Attention" : "Stable";
+  const snoozeAlert = () => {
+    writeUserData(pname, { alert: false });
+  }
   return (
-    <Button asChild onPress={ () => {RNBeep.beep()}}>
-      <Card size="$5" alignItems="center" justifyContent="center" p="$4">
+    <Card size="$5" alignItems="center" justifyContent="center" p="$4">
         <Card.Header>
           <Text fontSize={30} color="orange" m="2">{pname}</Text>
         </Card.Header>
@@ -17,7 +16,8 @@ export const PatientCard = ({ data, pname }) => {
         <Text>heart rate : {data?.["heart-rate"]}</Text>
         <Text>temperature : {data?.temperature}</Text>
           <Text>spO2 : {data?.spo2}</Text>
+        {data?.alert && <Button onPress={snoozeAlert}><Text>Snooze</Text>
+    </Button>}
       </Card>
-    </Button>
   );
 };

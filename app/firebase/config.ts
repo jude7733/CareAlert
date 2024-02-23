@@ -23,10 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const database = getDatabase(app);
 
-export function writeUserData(userId: string) {
-  set(ref(database, "/patients" + userId), {
-    motion: "bad",
-    name: "jude",
-    vitals: "normal",
-  });
+export function writeUserData(userId: string, data: any) {
+  set(ref(database, "/patients" + userId), 
+   data);
 }
